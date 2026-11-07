@@ -1,0 +1,38 @@
+Docker - username : barman , password: cb100@100
+
+docker build -t my-image .
+
+docker images
+
+docker run --name my-container my-image:latest
+
+remove old container
+docker rm -f my-container
+
+docker build -t my-image .
+
+docker run -p 5000:5000 --name my-container my-image
+docker run --name my-container -p 5000:5000 my-image
+--------------------------------------
+54-5
+
+check docker>>>
+docker ps
+
+docker ps>>>>container id >>>a192243be114
+docker container stop a192243be114
+
+docker images
+
+
+docker run --name my-container -p 5000:5000 my-image
+
+docker ps -a 
+
+docker run --name my-container -p 5000:5000 my-image
+
+
+------------------------------------------------------
+54-6
+
+
