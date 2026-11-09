@@ -37,4 +37,28 @@ docker run --name my-container -p 5000:5000 my-image
 ----------------------------------------------------
 54-7: Managing container and practice mostly used commands
 
+--------------------------------
+54-8
+
+docker run -it --name restart-always --restart always alpine sh
+
+docker inspect restart-always --format '{{.RestartCount}}'
+
+docker run -d --name always-test --restart always alpine sleep id
+docker run -d --name unless-test --restart unless-stopped  alpine sleep id
+
+docker stop always-test unless-test always-test unless-test
+
+wsl --shutdown
+
+doctor run -d --name on-failure --restart on-failure alpine sleep id
+doctor inspect on-failure --format '{{.HostConfig.RestartPolicy}}'
+
+docker stop on-failure
+
+wsl --shutdown
+
+docker run --name check-failure --restart on-failure alpine sh -c "exit 1"
+
+
 
