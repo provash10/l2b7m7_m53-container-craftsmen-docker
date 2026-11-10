@@ -69,3 +69,12 @@ docker build -t node-app .
  docker tag node-app:latest  docker-node-backend:latest
  docker push docker-node-backend:latest
 
+---------------------------------------
+ 55-4
+ docker volume create my-vol
+ docker volume ls
+
+ docker volume inspect my-vol
+
+ docker reun -it --name vol-demo -v my-vol:/data ubuntu bash
+
