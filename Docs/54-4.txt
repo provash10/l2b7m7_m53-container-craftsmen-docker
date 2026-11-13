@@ -78,3 +78,27 @@ docker build -t node-app .
 
  docker reun -it --name vol-demo -v my-vol:/data ubuntu bash
 
+------------------------
+55-5
+ docker run -it --name vol-test -v myData:/data ubuntu bash
+ 
+ docker ps -a 
+docker container inspect vol-test
+
+docker volume create server1
+docker volume create server2
+docker volume create server3
+
+#remove
+docker volume prune
+
+docker volume rm server2
+
+ docker run -it -v /data ubuntu bash
+
+ docker container inspect b095
+
+
+
+
+
