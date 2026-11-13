@@ -116,3 +116,14 @@ nodemon index.js
 http://localhost:5000/
 ---------------------------------
 
+55-7
+terminal>>>
+docker build -t my-app .
+docker run --name my-container -p 5000:5000 my-app
+
+docker run --rm -v "/c/Projects/1. nl/Docker1/app"
+docker run --rm -it -v "/c/Projects/1. nl/Docker1:/app" node:20-alpine sh
+
+docker run -d --rm --name my-web-app -p 5000:5000 my-image
+
+
