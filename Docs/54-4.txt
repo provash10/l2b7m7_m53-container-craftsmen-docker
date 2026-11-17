@@ -126,4 +126,26 @@ docker run --rm -it -v "/c/Projects/1. nl/Docker1:/app" node:20-alpine sh
 
 docker run -d --rm --name my-web-app -p 5000:5000 my-image
 
+============================
+55-8
+ docker build --build-arg APP_ENV=testing -t my-app .
 
+docker images
+docker run -it --rm -p 5000:5000 my-app:nginx:latest
+
+সমাধান (আপনি যেটি রান করতে চান):
+১. আপনি যদি আপনার নোড অ্যাপ (my-app) রান করতে চান:
+bash
+docker run -it --rm -p 5000:5000 my-app:latest
+২. আর আপনি যদি nginx সার্ভার রান করতে চান:
+
+(Nginx সাধারণত পোর্ট ৮০-তে চলে, তাই ৮০ পোর্ট ম্যাপ করতে হয়):
+
+bash
+docker run -it --rm -p 80:80 nginx:latest
+
+(অথবা ব্রাউজারে ৫০০০ পোর্টে দেখতে চাইলে: docker run -it --rm -p 5000:80 nginx:latest)
+
+docker run -it --rm -p 5000:5000 -e PORT=5000 NODE_ENV=production my-app:latest
+
+docker run -it --rm --env-file .env -p 5000:5000 my-app:latest
